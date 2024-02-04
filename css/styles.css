@@ -92,8 +92,6 @@ img {
     color: #2E2F42;
 }
 
-
-
 .heder-address {
     display: none;
 }
@@ -117,13 +115,19 @@ img {
     background-color: transparent;
     cursor: pointer;
     border: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ----------------------MOB MENU-------------------------------------------------------- */
 
 .mob-menu {
-    width: 320px;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     background-color: #FFFFFF;
@@ -136,6 +140,15 @@ img {
     padding-left: 16px;
     padding-bottom: 40px;
     padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+   
+}
+
+
+.mob-title {
+    margin-top: auto;
     
 }
 .mob-menu-list {
@@ -146,24 +159,53 @@ img {
     text-transform: capitalize;
     
 }
-.mob-menu-item {
-    margin-bottom: 40px;
-}
-.mob-address {
-    margin-top: 128px;
-}
-.mob-address-list {
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 1.2;
-        letter-spacing: 0.02em;
-}
-.mob-address-item {
+.mob-menu-item:not(:last-child) {
     margin-bottom: 24px;
 }
+.mob-address {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    
+}
+.mob-address-link {
+    color: #434455;
+}
+.mob-address-list {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
 
-.mob-icons {
-    margin-top: 48px;
+.mob-address-list,
+.mob-address-item:first-child {
+    order: 2;
+}
+
+.mob-address-list,
+.mob-address-item:last-child {
+    order: 1;
+}
+
+
+.mob-address-item {
+   
+}
+
+.mob-address-link:hover,
+.mob-address-link:focus{
+    color: #404bbf;
+}
+
+.mob-menu-link:hover,
+.mob-menu-link:focus {
+    color: #404bbf;
 }
 
 .mob-close-btn {
@@ -177,6 +219,10 @@ img {
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     fill: #2E2F42;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    
 }
 
 .mob-close-btn:focus,
@@ -188,9 +234,11 @@ img {
 
 .mob-icon-list {
     display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-end;
+    padding-top: 48px;
+
 }
 
 .mob-icon-item {
@@ -236,7 +284,7 @@ img {
     text-transform: capitalize;
     margin: 0 auto;
     max-width: 216px;
-    padding-bottom: 72px;
+    margin-bottom: 72px;
 }
 
 .hero-btn {
@@ -437,6 +485,10 @@ img {
     
 }
 
+.logo-desc {
+    margin-bottom: 72px;
+}
+
 .footer-logo-part {
     color:#F4F4FD;
     font-family: Raleway;
@@ -452,7 +504,6 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     max-width: 264px;
-    margin-bottom: 48px;
     display: flex;
     justify-content: center;
 }
@@ -466,6 +517,10 @@ img {
     margin-bottom: 16px;
     display: flex;
     justify-content: center;
+}
+
+.social-media-footer {
+    margin-bottom: 72px;
 }
 
 .footer-icon {
@@ -512,7 +567,7 @@ img {
 
 .footer-form-input{
     display: inline-flex;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .footer-form-text {
@@ -525,7 +580,6 @@ img {
     
     display: flex;
     justify-content: center;
-    margin-top: 72px;
     
 }
 .footer-input {
@@ -598,12 +652,13 @@ img {
 }
 
 .portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
     background-color: #FFFFFF;
     gap: 48px;
 }
 
 .portfolio-item-list {
-    padding-bottom: 48px;
     background: #FFF;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -671,11 +726,11 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 72px 24px 24px 24px;
+    padding: 24px 16px 24px 16px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 288px;
-    height: 623px;
+    
 }
 
 .modal-close-btn{
@@ -684,17 +739,16 @@ img {
     width: 24px;
     height: 24px;
     margin-left: auto;
-    position: absolute;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     padding: 0;
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #e7e9fc;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 
 .modal-close-icon{
@@ -809,17 +863,23 @@ img {
 }
 
 .check-text {
-    color: #8e8f99;;
+    color: #8e8f99;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     align-items: center;
-    position: relative;
+    display: inline-flex;
+    gap: 7.5px;
+   
+    
 }
+
 
 .check-text a {
     color:#4D5AE5;
+    line-height: 1.33;
     text-decoration: underline;   
+    
 }
 
 .check {
@@ -829,14 +889,18 @@ img {
     border-radius: 2px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
+    align-items: center;
 }
 
 .check-text span {
-    margin-right: 8px;
+    
     align-items: center;
     justify-content: center;
     fill: transparent;
+    display: block;
 }
+
+
 
 .check-input:checked + .check-text span {
     background-color: #404BBF;
@@ -844,9 +908,6 @@ img {
     fill: #F4F4FD;
 } 
 
-.space {
-    margin-left: 5px;
-}
 
 .sumbit-btn {
     display: block;
@@ -899,6 +960,7 @@ img {
         font-style: normal;
         margin-left: auto;
         }
+
     
     .logo {
         margin-right: 120px;
@@ -971,7 +1033,6 @@ img {
         line-height: 1.07;
         max-width: 496px;
         text-transform: inherit;
-        padding-bottom: 36px;
     }
 
     @media screen and (min-device-pixel-ratio: 2),
@@ -985,17 +1046,15 @@ img {
     }
 
     .princeples-list {
-        box-sizing: inherit;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 0;
-        column-gap: 24px;
+        gap: 24px;
+        row-gap: 72px;
         
     }
 
     .princeples-text {
         flex-basis: calc((100% - 24px) / 2);
-        padding-bottom: 72px;
         display: flex;
         width: 356px;
         flex-direction: column;
@@ -1070,30 +1129,33 @@ img {
     }
     .footer-form-text{
         justify-content: left;
-        margin-top: 72px;
     }
     .footer-container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        margin-left: 108px;
     
     }
+    .social-media {
+        justify-content: left;
+    }
+
     .logo-desc {
-        padding-left: 92px;
-        padding-right: 24px;
+        margin-right: 24px;
     }
-    .footer-form-subscribe {
-        padding-left: 92px;
-    }
+    
     .footer-text {
         margin-bottom: 0;
     }
     .footer-form-input {
         max-width: 264px;
+        margin: 0;
     }
 
     .footer-form-btn{
         margin-left: 24px;
+        margin-right: 0;
     }
     
 
@@ -1109,6 +1171,9 @@ img {
         padding: 72px 24px 24px 24px;
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
         transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .space {
+        margin-left: 5px;
     }
 }
 
@@ -1130,7 +1195,7 @@ img {
     }
 
     .hero-title {
-        padding-bottom: 48px;
+        margin-bottom: 48px;
         
     }
 
@@ -1146,7 +1211,7 @@ img {
 
     .princeples {
         padding-top: 120px;
-        padding-bottom: 40px;
+        padding-bottom: 120px;
     }
 
     .princeples-list {
@@ -1210,6 +1275,10 @@ img {
         
     }
 
+    .footer-container {
+        margin: 0 auto;
+    }
+
     .footer-color {
         padding: 100px 0 100px 0;
         flex-shrink: 0;
@@ -1219,6 +1288,7 @@ img {
     .logo-desc {
         margin-right: 120px;
         padding: 0;
+        margin-bottom: 0;
     }
 
     .footer-logo {
@@ -1229,6 +1299,10 @@ img {
         margin-left: 80px;
         padding: 0;
         }
+
+    .social-media-footer {
+        margin-bottom: 0;
+    }
 
     .footer-form {
         display: flex;
